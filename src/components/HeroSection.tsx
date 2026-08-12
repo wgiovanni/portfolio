@@ -156,7 +156,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         <div className="col-span-1 lg:col-span-5 relative">
           <div className="absolute -inset-1 bg-[#4cd7f6]/10 blur-2xl rounded-2xl pointer-events-none" />
 
-          <div className="bg-[#1c1b1b] rounded-lg border border-[#3d494c] shadow-2xl overflow-hidden relative z-10 flex flex-col">
+          <div className="bg-[#1c1b1b] rounded-lg border border-[#3d494c] shadow-[0_24px_70px_rgba(0,0,0,0.65),0_0_32px_rgba(76,215,246,0.16)] overflow-hidden relative z-10 flex flex-col">
             {/* Terminal Top Window Bar */}
             <div className="bg-[#201f1f] h-10 flex items-center justify-between px-3 border-b border-[#3d494c]">
               <div className="flex items-center gap-2">

@@ -155,7 +155,7 @@ export const ContactSection: React.FC = () => {
           {/* Right Side: Skills Terminal & Language Summary */}
           <div className="lg:col-span-4 flex flex-col gap-6">
             {/* Skills JSON Card */}
-            <div className="bg-[#121212] border border-[#3d494c] rounded-xl overflow-hidden flex flex-col shadow-xl">
+            <div className="bg-[#121212] border border-[#3d494c] rounded-xl overflow-hidden flex flex-col shadow-[0_24px_70px_rgba(0,0,0,0.65),0_0_32px_rgba(76,215,246,0.16)]">
               <div className="flex items-center px-4 py-2.5 border-b border-[#3d494c] bg-[#201f1f]">
                 <div className="flex space-x-2">
                   <div className="w-3 h-3 rounded-full bg-[#ffb4ab]" />

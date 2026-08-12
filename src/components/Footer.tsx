@@ -11,7 +11,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const t = UI_TRANSLATIONS[language];
 
   return (
-    <footer className="w-full py-10 bg-[#1c1b1b] border-t border-[#3d494c]/20 relative z-10">
+    <footer className="w-full py-10 bg-[#1c1b1b]/80 backdrop-blur-sm border-t border-[#3d494c]/20 relative z-10">
       <div className="max-w-[1200px] mx-auto px-4 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Left Tagline */}
         <div className="font-mono-code text-xs text-[#869397]">

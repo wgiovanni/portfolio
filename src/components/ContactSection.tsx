@@ -72,7 +72,7 @@ export const ContactSection: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 border-t border-[#3d494c]/30 relative bg-[#131313]">
+    <section id="contact" className="py-20 border-t border-[#3d494c]/30 relative bg-[#131313]/70 backdrop-blur-sm">
       <div className="max-w-[1200px] mx-auto px-4 md:px-12">
         <div className="mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#3d494c] bg-[#1c1b1b] font-mono-code text-xs text-[#4cd7f6] mb-3 font-medium">

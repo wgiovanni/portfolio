@@ -9,7 +9,7 @@ export const AboutSection: React.FC = () => {
   const t = UI_TRANSLATIONS[language];
 
   return (
-    <section id="about" className="py-20 border-t border-[#3d494c]/30 relative bg-[#131313]">
+    <section id="about" className="py-20 border-t border-[#3d494c]/30 relative bg-[#131313]/70 backdrop-blur-sm">
       <div className="max-w-[1200px] mx-auto px-4 md:px-12">
         {/* Bio Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

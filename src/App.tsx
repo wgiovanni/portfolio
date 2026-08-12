@@ -9,6 +9,7 @@ import { ExperienceSection } from './components/ExperienceSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
+import { ParticleBackground } from './components/ParticleBackground';
 
 function MainApp() {
   const [activeSection, setActiveSection] = useState('home');
@@ -44,7 +45,9 @@ function MainApp() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#131313] text-[#e5e2e1] font-inter selection:bg-[#4cd7f6]/30 selection:text-[#4cd7f6]">
+    <div className="min-h-screen flex flex-col bg-transparent text-[#e5e2e1] font-inter selection:bg-[#4cd7f6]/30 selection:text-[#4cd7f6]">
+      <ParticleBackground />
+
       {/* Sticky Header Navigation */}
       <Navbar
         activeSection={activeSection}

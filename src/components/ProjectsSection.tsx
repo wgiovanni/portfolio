@@ -12,7 +12,7 @@ export const ProjectsSection: React.FC = () => {
   const projects = getProjects(language);
 
   return (
-    <section id="projects" className="py-20 border-t border-[#3d494c]/30 relative bg-[#131313]">
+    <section id="projects" className="py-20 border-t border-[#3d494c]/70 relative bg-[#131313]/70 backdrop-blur-sm">
       <div className="max-w-[1200px] mx-auto px-4 md:px-12">
         {/* Header */}
         <header className="mb-12">

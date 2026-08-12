@@ -9,7 +9,7 @@ export const ExperienceSection: React.FC = () => {
   const experiences = getExperiences(language);
 
   return (
-    <section id="experience" className="py-20 border-t border-[#3d494c]/30 relative bg-[#131313]">
+    <section id="experience" className="py-20 border-t border-[#3d494c]/30 relative bg-[#131313]/70 backdrop-blur-sm">
       <div className="max-w-[1000px] mx-auto px-4 md:px-12">
         {/* Section Header */}
         <div className="mb-12">

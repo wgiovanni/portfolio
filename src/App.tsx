@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
@@ -68,6 +69,7 @@ export default function App() {
   return (
     <LanguageProvider>
       <MainApp />
+      <SpeedInsights />
     </LanguageProvider>
   );
 }

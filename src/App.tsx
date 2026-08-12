@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
@@ -68,6 +69,7 @@ export default function App() {
   return (
     <LanguageProvider>
       <MainApp />
+      <Analytics />
     </LanguageProvider>
   );
 }

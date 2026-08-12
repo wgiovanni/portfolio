@@ -9,20 +9,20 @@ export const PERSONAL_INFO = {
     en: 'Full Stack & Backend Engineer'
   },
   status: {
-    es: '+5 AÑOS DE EXPERIENCIA',
-    en: '+5 YEARS EXPERIENCE'
+    es: '+9 AÑOS DE EXPERIENCIA',
+    en: '+9 YEARS EXPERIENCE'
   },
   contactStatus: {
     es: 'Disponible para Proyectos y Colaboraciones',
     en: 'Open to Collaborations & Projects'
   },
   bio: {
-    es: 'Desarrollador Full Stack & Backend con +5 años de experiencia construyendo sistemas fintech de alto rendimiento, plataformas empresariales, canalizaciones de datos en la nube y APIs de microservicios. Especializado en Python (FastAPI), PHP (Laravel, Symfony), JavaScript/TypeScript (React.js, Node.js, Vue.js) y AWS.',
-    en: 'Full Stack & Backend Developer with +5 years of experience building high-performance fintech systems, enterprise platforms, cloud data pipelines, and microservices APIs. Specialized in Python (FastAPI), PHP (Laravel, Symfony), JavaScript/TypeScript (React.js, Node.js, Vue.js), and AWS.'
+    es: 'Desarrollador Full Stack & Backend con +9 años de experiencia construyendo sistemas fintech de alto rendimiento, plataformas empresariales, canalizaciones de datos en la nube y APIs de microservicios. Especializado en Python (FastAPI), PHP (Laravel, Symfony), JavaScript/TypeScript (React.js, Next.js, Node.js, Vue.js) y AWS.',
+    en: 'Full Stack & Backend Developer with +9 years of experience building high-performance fintech systems, enterprise platforms, cloud data pipelines, and microservices APIs. Specialized in Python (FastAPI), PHP (Laravel, Symfony), JavaScript/TypeScript (React.js, Next.js, Node.js, Vue.js), and AWS.'
   },
   aboutBio: {
-    es: 'Ingeniero Full Stack y Backend con +5 años de experiencia. Actualmente trabajo como Associate Engineer - Backend en BITA GmbH (Frankfurt, Alemania), desarrollando infraestructura en la nube, APIs de microservicios y sistemas ETL para procesamiento masivo de datos de índices financieros. Mi stack incluye Python (FastAPI, Pandas, Dask), PHP (Laravel, Symfony), JavaScript (React.js, Node.js), Docker, SQL y AWS. Me enfoco en confiabilidad, arquitecturas escalables y en aportar valor real de negocio.',
-    en: 'Full Stack & Backend Engineer with +5 years of experience. Currently working as Associate Engineer - Backend at BITA GmbH (Frankfurt, Germany), developing cloud infrastructure, microservices APIs, and ETL systems for processing massive financial index data. My stack includes Python (FastAPI, Pandas, Dask), PHP (Laravel, Symfony), JavaScript (React.js, Node.js), Docker, SQL, and AWS. I focus on reliability, scalable architectures, and delivering real business value.'
+    es: 'Ingeniero Full Stack y Backend con +9 años de experiencia. Actualmente trabajo como Associate Engineer - Backend en BITA GmbH (Frankfurt, Alemania), desarrollando infraestructura en la nube, APIs de microservicios y sistemas ETL para procesamiento masivo de datos de índices financieros. Mi stack incluye Python (FastAPI, Pandas, Dask), PHP (Laravel, Symfony), JavaScript (React.js, Next.js, Node.js), Docker, SQL y AWS. Me enfoco en confiabilidad, arquitecturas escalables y en aportar valor real de negocio.',
+    en: 'Full Stack & Backend Engineer with +9 years of experience. Currently working as Associate Engineer - Backend at BITA GmbH (Frankfurt, Germany), developing cloud infrastructure, microservices APIs, and ETL systems for processing massive financial index data. My stack includes Python (FastAPI, Pandas, Dask), PHP (Laravel, Symfony), JavaScript (React.js, Next.js, Node.js), Docker, SQL, and AWS. I focus on reliability, scalable architectures, and delivering real business value.'
   },
   email: 'wilkelgiovanni@gmail.com',
   phone: '+58 412 765 8802',
@@ -69,7 +69,7 @@ export const UI_TRANSLATIONS = {
     spanishLevel: 'Nativo',
     englishLabel: 'Inglés:',
     englishLevel: 'Competencia profesional de trabajo',
-    expTitle: 'Experiencia Profesional (+5 Años)',
+    expTitle: 'Experiencia Profesional (+9 Años)',
     expSub: 'Trayectoria comprobada desarrollando soluciones web full stack, microservicios, arquitecturas empresariales y sistemas de datos.',
     present: 'Presente',
     projectsTag: 'Portafolio de Soluciones',
@@ -122,7 +122,7 @@ export const UI_TRANSLATIONS = {
     spanishLevel: 'Native',
     englishLabel: 'English:',
     englishLevel: 'Professional Working Proficiency',
-    expTitle: 'Professional Experience (+5 Years)',
+    expTitle: 'Professional Experience (+9 Years)',
     expSub: 'Proven track record building full-stack web solutions, microservices, enterprise architectures, and cloud data systems.',
     present: 'Present',
     projectsTag: 'Solutions Portfolio',
@@ -161,11 +161,11 @@ export const getTerminalTabs = (lang: Language): TerminalTab[] => [
   name: 'Wilkel Giovanni',
   role: 'Associate Engineer - Backend',
   company: 'BITA GmbH (Frankfurt, Germany)',
-  experience: '+5 Years',
+  experience: '+9 Years',
   location: 'Valencia, Venezuela',
   stack: {
     backend: ['FastAPI', 'Python', 'Node.js', 'PHP', 'Laravel', 'Symfony'],
-    frontend: ['React.js', 'Vue.js', 'JavaScript'],
+    frontend: ['React.js', 'Next.js', 'Vue.js', 'JavaScript'],
     data_and_cloud: ['AWS', 'Docker', 'Pandas', 'Dask', 'Coiled', 'SQL']
   },
   execute: () => {
@@ -183,7 +183,7 @@ developer.execute();`
   "developer": "Wilkel Giovanni",
   "current_role": "Associate Engineer - Backend at BITA GmbH",
   "backend": ["FastAPI", "Python", "Node.js", "PHP", "Laravel", "Symfony", "Spring Boot"],
-  "frontend": ["React.js", "Vue.js", "JavaScript", "Bootstrap"],
+  "frontend": ["React.js", "Next.js", "Vue.js", "JavaScript", "Bootstrap"],
   "data_and_etl": ["Pandas", "Jupyter", "Dask", "Coiled", "ETL Pipelines"],
   "databases": ["SQL", "MySQL", "PostgreSQL", "MS SQL Server"],
   "cloud_and_devops": ["AWS", "Docker", "Git", "GitHub", "Microservices"]
@@ -202,7 +202,7 @@ $ wilkel status
 [OK] Phone/WhatsApp: +58 412 765 8802
 
 $ wilkel skills --summary
-> ${lang === 'es' ? '+5 Años de Experiencia en Backend, Full Stack y Sistemas de Datos' : '+5 Years Experience in Backend, Full Stack & Data Systems'}
+> ${lang === 'es' ? '+9 Años de Experiencia en Backend, Full Stack y Sistemas de Datos' : '+9 Years Experience in Backend, Full Stack & Data Systems'}
 > ${lang === 'es' ? 'Fintech (Índices Financieros, Microservicios, ETL), Inmobiliario, Sistemas Empresariales y Bancarios' : 'Fintech (Financial Indices, Microservices, ETL), Real Estate, Enterprise & Banking Systems'}`
   }
 ];
@@ -439,7 +439,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: 'Frontend Development',
     skills: [
-      { name: 'React.js & Node.js', level: 95, description: 'User interfaces, dashboards, state management, SPA routing.', badge: 'Primary' },
+      { name: 'React.js & Next.js', level: 95, description: 'User interfaces, dashboards, server-side rendering, and full-stack web applications.', badge: 'Primary' },
       { name: 'Vue.js', level: 92, description: 'Vuex, Vue Router, reactive single file components.', badge: 'Primary' },
       { name: 'JavaScript & HTML/CSS', level: 96, description: 'ES6+ standards, async promise workflows, responsive UI design.', badge: 'Expert' }
     ]

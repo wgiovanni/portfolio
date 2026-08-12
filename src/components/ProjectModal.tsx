@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Project } from '../types';
 import { X, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -13,9 +14,21 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   const { language } = useLanguage();
   const t = UI_TRANSLATIONS[language];
 
+  useEffect(() => {
+    if (!project) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [project]);
+
   if (!project) return null;
 
-  return (
+  return createPortal(
+    (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
       <div className="bg-[#1c1b1b] border border-[#3d494c] rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 md:p-8 relative text-[#e5e2e1]">
         {/* Close Button */}
@@ -114,5 +127,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
       </div>
     </div>
+    ),
+    document.body
   );
 };

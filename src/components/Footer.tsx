@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         {/* Right Links */}
-        <div className="flex flex-wrap items-center gap-6 font-inter text-sm text-[#4cd7f6]">
+        <div className="flex flex-wrap items-center justify-center gap-6 text-center font-inter text-sm text-[#4cd7f6] md:justify-end">
           <a
             href={PERSONAL_INFO.github}
             target="_blank"

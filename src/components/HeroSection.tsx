@@ -89,7 +89,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
       {/* Subtle Glow backdrop */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#4cd7f6]/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-[1200px] w-full mx-auto px-4 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="max-w-[1200px] w-full min-w-0 mx-auto px-4 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         {/* Left Column: Hero Typography & CTA */}
         <div className="col-span-1 lg:col-span-7 flex flex-col gap-6">
           {/* Status Badge */}
@@ -153,20 +153,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         </div>
 
         {/* Right Column: Interactive Terminal IDE Window */}
-        <div className="col-span-1 lg:col-span-5 relative">
+        <div className="col-span-1 lg:col-span-5 relative min-w-0">
           <div className="absolute -inset-1 bg-[#4cd7f6]/10 blur-2xl rounded-2xl pointer-events-none" />
 
-          <div className="bg-[#1c1b1b] rounded-lg border border-[#3d494c] shadow-[0_24px_70px_rgba(0,0,0,0.65),0_0_32px_rgba(76,215,246,0.16)] overflow-hidden relative z-10 flex flex-col">
+          <div className="bg-[#1c1b1b] rounded-lg border border-[#3d494c] shadow-[0_24px_70px_rgba(0,0,0,0.65),0_0_32px_rgba(76,215,246,0.16)] overflow-hidden relative z-10 flex min-w-0 flex-col">
             {/* Terminal Top Window Bar */}
-            <div className="bg-[#201f1f] h-10 flex items-center justify-between px-3 border-b border-[#3d494c]">
-              <div className="flex items-center gap-2">
+            <div className="bg-[#201f1f] min-h-10 flex flex-wrap items-center gap-2 px-3 py-1 border-b border-[#3d494c] md:h-10 md:flex-nowrap md:py-0">
+              <div className="flex shrink-0 items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-[#ffb4ab]" />
                 <div className="w-3 h-3 rounded-full bg-[#06b6d4]" />
                 <div className="w-3 h-3 rounded-full bg-[#4cd7f6]" />
               </div>
 
               {/* File Tabs */}
-              <div className="flex items-center gap-1 overflow-x-auto no-scrollbar">
+              <div className="order-3 min-w-0 basis-full flex flex-1 items-center gap-1 overflow-x-auto no-scrollbar md:order-none md:basis-auto">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
@@ -184,9 +184,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
               </div>
 
               {/* Action utilities */}
-              <div className="flex items-center gap-1">
+              <div className="order-2 ml-auto flex shrink-0 items-center gap-1 md:order-none md:ml-0">
                 <button
                   onClick={handleCopyCode}
+                  aria-label={t.copyCode}
                   className="p-1 text-[#869397] hover:text-[#4cd7f6] rounded hover:bg-[#2a2a2a] transition-colors cursor-pointer"
                   title={t.copyCode}
                 >
@@ -194,6 +195,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
                 </button>
                 <button
                   onClick={handleResetCode}
+                  aria-label={t.resetCode}
                   className="p-1 text-[#869397] hover:text-[#4cd7f6] rounded hover:bg-[#2a2a2a] transition-colors cursor-pointer"
                   title={t.resetCode}
                 >

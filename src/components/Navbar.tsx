@@ -50,16 +50,16 @@ export const Navbar: React.FC<NavbarProps> = ({
           : 'bg-[#131313]/80 backdrop-blur-md border-[#3d494c]/30 py-4'
       }`}
     >
-      <div className="max-w-[1200px] mx-auto px-4 md:px-12 flex justify-between items-center h-12">
+      <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-12 flex justify-between items-center h-12 gap-2">
         {/* Logo */}
         <button
           onClick={() => handleLinkClick('home')}
-          className="flex items-center gap-2.5 group text-left cursor-pointer focus:outline-none"
+          className="flex min-w-0 items-center gap-2.5 group text-left cursor-pointer focus:outline-none"
         >
           <div className="w-8 h-8 rounded bg-[#201f1f] border border-[#3d494c] flex items-center justify-center text-[#4cd7f6] group-hover:border-[#4cd7f6] transition-colors">
             <Code2 size={18} />
           </div>
-          <span className="font-geist text-xl md:text-2xl font-bold text-[#e5e2e1] tracking-tight group-hover:text-[#4cd7f6] transition-colors">
+          <span className="font-geist text-base sm:text-xl md:text-2xl font-bold text-[#e5e2e1] tracking-tight group-hover:text-[#4cd7f6] transition-colors leading-tight">
             Wilkel <span className="text-[#4cd7f6]">Giovanni</span>
           </span>
         </button>
@@ -88,12 +88,12 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Action Button & Language Switcher & Mobile Toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
           {/* Language Switcher Pill */}
           <div className="flex items-center bg-[#1c1b1b] border border-[#3d494c] rounded-full p-1 text-xs font-mono-code">
             <button
               onClick={() => setLanguage('es')}
-              className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
+              className={`px-2 py-1 sm:px-2.5 rounded-full transition-all cursor-pointer ${
                 language === 'es'
                   ? 'bg-[#4cd7f6] text-[#003640] font-bold shadow-sm'
                   : 'text-[#869397] hover:text-[#e5e2e1]'
@@ -104,7 +104,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
             <button
               onClick={() => setLanguage('en')}
-              className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
+              className={`px-2 py-1 sm:px-2.5 rounded-full transition-all cursor-pointer ${
                 language === 'en'
                   ? 'bg-[#4cd7f6] text-[#003640] font-bold shadow-sm'
                   : 'text-[#869397] hover:text-[#e5e2e1]'

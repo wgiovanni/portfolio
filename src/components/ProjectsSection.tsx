@@ -36,11 +36,11 @@ export const ProjectsSection: React.FC = () => {
               className="bg-[#1c1b1b] border border-[#353534] rounded-xl overflow-hidden glow-effect transition-all duration-300 flex flex-col group relative"
             >
               <div className="p-8 flex flex-col h-full z-10">
-                <div className="flex justify-between items-start mb-3 gap-3">
-                  <h3 className="font-geist text-2xl font-bold text-[#e5e2e1] group-hover:text-[#4cd7f6] transition-colors">
+                <div className="flex flex-col items-start mb-3 gap-2">
+                  <h3 className="w-full min-w-0 font-geist text-2xl font-bold text-[#e5e2e1] group-hover:text-[#4cd7f6] transition-colors">
                     {project.title}
                   </h3>
-                  <span className="px-3 py-1 bg-[#353534]/50 border border-[#3d494c]/30 rounded text-xs font-mono-code text-[#4cd7f6] shrink-0 font-medium">
+                  <span className="max-w-full px-3 py-1 bg-[#353534]/50 border border-[#3d494c]/30 rounded text-xs font-mono-code text-[#4cd7f6] font-medium whitespace-normal">
                     {project.badge}
                   </span>
                 </div>

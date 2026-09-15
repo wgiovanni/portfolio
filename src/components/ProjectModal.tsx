@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Project } from '../types';
 import { X, CheckCircle } from 'lucide-react';
@@ -13,28 +13,46 @@ interface ProjectModalProps {
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   const { language } = useLanguage();
   const t = UI_TRANSLATIONS[language];
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!project) return;
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
 
     return () => {
+      document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = previousOverflow;
     };
-  }, [project]);
+  }, [project, onClose]);
 
   if (!project) return null;
 
   return createPortal(
     (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="bg-[#1c1b1b] border border-[#3d494c] rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 md:p-8 relative text-[#e5e2e1]">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="project-modal-title"
+    >
+      <div className="bg-[#1c1b1b] border border-[#3d494c] rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 pt-16 md:p-8 md:pt-16 relative text-[#e5e2e1]">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-1.5 text-[#869397] hover:text-[#4cd7f6] bg-[#201f1f] rounded-lg border border-[#3d494c]/50 transition-colors cursor-pointer"
+          ref={closeButtonRef}
+          aria-label={t.close}
+          className="absolute top-4 right-4 p-1.5 text-[#869397] hover:text-[#4cd7f6] bg-[#201f1f] rounded-lg border border-[#3d494c]/50 transition-colors cursor-pointer"
         >
           <X size={20} />
         </button>
@@ -52,7 +70,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Title */}
-        <h3 className="font-geist text-2xl md:text-3xl font-bold text-[#e5e2e1] mb-2">
+        <h3 id="project-modal-title" className="font-geist text-2xl md:text-3xl font-bold text-[#e5e2e1] mb-2">
           {project.title}
         </h3>
         {project.subtitle && (

@@ -10,9 +10,82 @@ import { ProjectsSection } from './components/ProjectsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ParticleBackground } from './components/ParticleBackground';
+import { useLanguage } from './context/LanguageContext';
+
+const SITE_URL = 'https://wgiovanni.com';
 
 function MainApp() {
   const [activeSection, setActiveSection] = useState('home');
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    const canonicalUrl = `${SITE_URL}/`;
+    const seoContent = language === 'es'
+      ? {
+          title: 'Wilkel Giovanni | Ingeniero Full Stack y Backend',
+          description: 'Portfolio de Wilkel Giovanni, ingeniero Full Stack y Backend especializado en Python, FastAPI, PHP, React, Node.js, AWS y sistemas fintech escalables.',
+          ogDescription: 'Ingeniero Full Stack y Backend especializado en sistemas fintech, APIs de microservicios, datos en la nube y arquitecturas escalables.'
+        }
+      : {
+          title: 'Wilkel Giovanni | Full Stack & Backend Engineer',
+          description: 'Portfolio of Wilkel Giovanni, a Full Stack and Backend Engineer specializing in Python, FastAPI, PHP, React, Node.js, AWS, and scalable fintech systems.',
+          ogDescription: 'Full Stack and Backend Engineer specializing in fintech systems, microservices APIs, cloud data, and scalable architectures.'
+        };
+    document.documentElement.lang = language;
+    document.title = seoContent.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', seoContent.description);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', seoContent.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', seoContent.ogDescription);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', seoContent.title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', seoContent.description);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonicalUrl);
+
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
+
+    let structuredData = document.querySelector<HTMLScriptElement>('script[data-seo="person"]');
+    if (!structuredData) {
+      structuredData = document.createElement('script');
+      structuredData.type = 'application/ld+json';
+      structuredData.dataset.seo = 'person';
+      document.head.appendChild(structuredData);
+    }
+    structuredData.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Wilkel Giovanni',
+      url: canonicalUrl,
+      jobTitle: 'Full Stack & Backend Engineer',
+      description: 'Full Stack and Backend Engineer specialized in scalable fintech systems, microservices APIs, cloud data pipelines, and enterprise platforms.',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Valencia',
+        addressCountry: 'VE'
+      },
+      sameAs: [
+        'https://github.com/wgiovanni',
+        'https://linkedin.com/in/wgiovanni',
+        'https://instagram.com/wgiovanni95'
+      ],
+      knowsAbout: [
+        'Python',
+        'FastAPI',
+        'PHP',
+        'Laravel',
+        'Symfony',
+        'React',
+        'Node.js',
+        'AWS',
+        'Docker',
+        'Data Engineering'
+      ]
+    });
+  }, [language]);
 
   useEffect(() => {
     const handleScroll = () => {

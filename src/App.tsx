@@ -12,7 +12,7 @@ import { Footer } from './components/Footer';
 import { ParticleBackground } from './components/ParticleBackground';
 import { useLanguage } from './context/LanguageContext';
 
-const SITE_URL = 'https://wgiovanni.com';
+const SITE_URL = 'https://www.wgiovanni.com';
 
 function MainApp() {
   const [activeSection, setActiveSection] = useState('home');

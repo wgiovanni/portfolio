@@ -11,6 +11,7 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ParticleBackground } from './components/ParticleBackground';
 import { useLanguage } from './context/LanguageContext';
+import { SEO_CONTENT } from './data/portfolioData';
 
 const SITE_URL = 'https://www.wgiovanni.com';
 
@@ -20,22 +21,13 @@ function MainApp() {
 
   useEffect(() => {
     const canonicalUrl = `${SITE_URL}/`;
-    const seoContent = language === 'es'
-      ? {
-          title: 'Wilkel Giovanni | Ingeniero Full Stack y Backend',
-          description: 'Portfolio de Wilkel Giovanni, ingeniero Full Stack y Backend especializado en Python, FastAPI, PHP, React, Node.js, AWS y sistemas fintech escalables.',
-          ogDescription: 'Ingeniero Full Stack y Backend especializado en sistemas fintech, APIs de microservicios, datos en la nube y arquitecturas escalables.'
-        }
-      : {
-          title: 'Wilkel Giovanni | Full Stack & Backend Engineer',
-          description: 'Portfolio of Wilkel Giovanni, a Full Stack and Backend Engineer specializing in Python, FastAPI, PHP, React, Node.js, AWS, and scalable fintech systems.',
-          ogDescription: 'Full Stack and Backend Engineer specializing in fintech systems, microservices APIs, cloud data, and scalable architectures.'
-        };
+    const seoContent = SEO_CONTENT[language];
     document.documentElement.lang = language;
     document.title = seoContent.title;
     document.querySelector('meta[name="description"]')?.setAttribute('content', seoContent.description);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', seoContent.title);
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', seoContent.ogDescription);
+    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', seoContent.ogLocale);
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', seoContent.title);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', seoContent.description);
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonicalUrl);

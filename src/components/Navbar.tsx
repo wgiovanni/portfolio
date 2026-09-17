@@ -16,6 +16,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage } = useLanguage();
   const t = UI_TRANSLATIONS[language];
+  const languageLabel = language === 'es' ? 'Idioma' : 'Language';
+  const menuLabel = language === 'es' ? 'Abrir menú de navegación' : 'Open navigation menu';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="w-8 h-8 rounded bg-[#201f1f] border border-[#3d494c] flex items-center justify-center text-[#4cd7f6] group-hover:border-[#4cd7f6] transition-colors">
             <Code2 size={18} />
           </div>
-          <span className="font-geist text-base sm:text-xl md:text-2xl font-bold text-[#e5e2e1] tracking-tight group-hover:text-[#4cd7f6] transition-colors leading-tight">
+          <span className="truncate font-geist text-base sm:text-xl md:text-2xl font-bold text-[#e5e2e1] tracking-tight group-hover:text-[#4cd7f6] transition-colors leading-tight">
             Wilkel <span className="text-[#4cd7f6]">Giovanni</span>
           </span>
         </button>
@@ -98,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   ? 'bg-[#4cd7f6] text-[#003640] font-bold shadow-sm'
                   : 'text-[#869397] hover:text-[#e5e2e1]'
               }`}
-              title="Cambiar a Español"
+              title={language === 'es' ? 'Español' : 'Switch to Spanish'}
             >
               ES
             </button>
@@ -109,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   ? 'bg-[#4cd7f6] text-[#003640] font-bold shadow-sm'
                   : 'text-[#869397] hover:text-[#e5e2e1]'
               }`}
-              title="Switch to English"
+              title={language === 'en' ? 'English' : 'Switch to English'}
             >
               EN
             </button>
@@ -127,7 +129,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden text-[#4cd7f6] p-2 hover:bg-[#201f1f] rounded border border-[#3d494c]/40 cursor-pointer"
-            aria-label="Toggle Navigation Menu"
+            aria-label={menuLabel}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -156,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="pt-3 border-t border-[#3d494c]/40 flex items-center justify-between gap-2">
             <div className="flex items-center gap-1 font-mono-code text-xs text-[#869397]">
               <Globe size={14} className="text-[#4cd7f6]" />
-              <span>{language === 'es' ? 'Idioma:' : 'Language:'}</span>
+              <span>{languageLabel}:</span>
             </div>
             <div className="flex items-center bg-[#131313] border border-[#3d494c] rounded-full p-1 text-xs font-mono-code">
               <button

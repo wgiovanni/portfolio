@@ -1,9 +1,8 @@
-import { Project, ExperienceItem, SkillCategory, TerminalTab } from '../types';
+import { Project, ExperienceItem, TerminalTab } from '../types';
 import { Language } from '../context/LanguageContext';
 
 export const PERSONAL_INFO = {
   name: 'Wilkel Giovanni',
-  developerName: 'Wilkel Giovanni',
   title: {
     es: 'Ingeniero Full Stack y Backend',
     en: 'Full Stack & Backend Engineer'
@@ -11,10 +10,6 @@ export const PERSONAL_INFO = {
   status: {
     es: '+9 AÑOS DE EXPERIENCIA',
     en: '+9 YEARS EXPERIENCE'
-  },
-  contactStatus: {
-    es: 'Disponible para Proyectos y Colaboraciones',
-    en: 'Open to Collaborations & Projects'
   },
   bio: {
     es: 'Desarrollador Full Stack & Backend con +9 años de experiencia construyendo sistemas fintech de alto rendimiento, plataformas empresariales, canalizaciones de datos en la nube y APIs de microservicios. Especializado en Python (FastAPI), PHP (Laravel, Symfony), JavaScript/TypeScript (React.js, Next.js, Node.js, Vue.js) y AWS.',
@@ -26,13 +21,11 @@ export const PERSONAL_INFO = {
   },
   email: 'wilkelgiovanni@gmail.com',
   phone: '+58 412 765 8802',
-  phoneRaw: '+584127658802',
   whatsappUrl: 'https://wa.me/584127658802',
   github: 'https://github.com/wgiovanni',
   linkedin: 'https://linkedin.com/in/wgiovanni',
   instagram: 'https://instagram.com/wgiovanni95',
   location: 'Valencia, Venezuela',
-  yearsExperience: '5+',
   education: {
     es: 'Licenciatura en Computación — Universidad de Carabobo (2012 — 2019)',
     en: 'Bachelor\'s Degree in Computer Science — University of Carabobo (2012 — 2019)'
@@ -51,7 +44,6 @@ export const UI_TRANSLATIONS = {
     navProjects: 'Proyectos',
     navContact: 'Contacto',
     navContactBtn: 'Contactar',
-    heroRole: 'Ingeniero Full Stack y Backend',
     viewProjects: 'Ver Proyectos',
     contactDetails: 'Datos de Contacto',
     consoleHeader: 'Consola',
@@ -62,16 +54,9 @@ export const UI_TRANSLATIONS = {
     aboutTag: 'Ingeniero Full Stack y Backend',
     aboutHeadline: 'Desarrollo de software robusto, escalable y enfocado en resultados.',
     educationTitle: 'Educación Universitaria',
-    degreeTitle: 'Licenciatura en Computación',
-    univPeriod: 'Universidad de Carabobo (2012 — 2019)',
     langTitle: 'Idiomas',
-    spanishLabel: 'Español:',
-    spanishLevel: 'Nativo',
-    englishLabel: 'Inglés:',
-    englishLevel: 'Competencia profesional de trabajo',
     expTitle: 'Experiencia Profesional (+9 Años)',
     expSub: 'Trayectoria comprobada desarrollando soluciones web full stack, microservicios, arquitecturas empresariales y sistemas de datos.',
-    present: 'Presente',
     projectsTag: 'Portafolio de Soluciones',
     projectsTitle: 'Proyectos y Sistemas Desarrollados',
     projectsSub: 'Plataformas web, microservicios, canalizaciones de datos e integraciones empresariales construidas con Python, PHP y JavaScript.',
@@ -90,7 +75,6 @@ export const UI_TRANSLATIONS = {
     openWhatsapp: 'Abrir WhatsApp',
     waDirect: 'WhatsApp Directo',
     copyTooltip: 'Copiar al portapapeles',
-    copiedText: '¡Copiado!',
     overview: 'Descripción General',
     architectureHighlights: 'Puntos Arquitectónicos',
     techUsed: 'Tecnologías Utilizadas',
@@ -104,7 +88,6 @@ export const UI_TRANSLATIONS = {
     navProjects: 'Projects',
     navContact: 'Contact',
     navContactBtn: 'Contact',
-    heroRole: 'Full Stack & Backend Engineer',
     viewProjects: 'View Projects',
     contactDetails: 'Contact Info',
     consoleHeader: 'Console',
@@ -115,16 +98,9 @@ export const UI_TRANSLATIONS = {
     aboutTag: 'Full Stack & Backend Engineer',
     aboutHeadline: 'Building robust, scalable, and impact-driven software solutions.',
     educationTitle: 'University Education',
-    degreeTitle: 'Bachelor\'s Degree in Computer Science',
-    univPeriod: 'University of Carabobo (2012 — 2019)',
     langTitle: 'Languages',
-    spanishLabel: 'Spanish:',
-    spanishLevel: 'Native',
-    englishLabel: 'English:',
-    englishLevel: 'Professional Working Proficiency',
     expTitle: 'Professional Experience (+9 Years)',
     expSub: 'Proven track record building full-stack web solutions, microservices, enterprise architectures, and cloud data systems.',
-    present: 'Present',
     projectsTag: 'Solutions Portfolio',
     projectsTitle: 'Featured Projects & Developed Systems',
     projectsSub: 'Web platforms, microservices, data pipelines, and enterprise integrations built with Python, PHP, and JavaScript.',
@@ -143,7 +119,6 @@ export const UI_TRANSLATIONS = {
     openWhatsapp: 'Open WhatsApp',
     waDirect: 'Direct WhatsApp',
     copyTooltip: 'Copy to clipboard',
-    copiedText: 'Copied!',
     overview: 'Overview',
     architectureHighlights: 'Architecture Highlights',
     techUsed: 'Technologies Used',
@@ -151,6 +126,21 @@ export const UI_TRANSLATIONS = {
     copyright: 'Full Stack & Backend Engineer.'
   }
 };
+
+export const SEO_CONTENT = {
+  es: {
+    title: 'Wilkel Giovanni | Ingeniero Full Stack y Backend',
+    description: 'Portfolio de Wilkel Giovanni, ingeniero Full Stack y Backend especializado en Python, FastAPI, PHP, React, Node.js, AWS y sistemas fintech escalables.',
+    ogDescription: 'Ingeniero Full Stack y Backend especializado en sistemas fintech, APIs de microservicios, datos en la nube y arquitecturas escalables.',
+    ogLocale: 'es_ES'
+  },
+  en: {
+    title: 'Wilkel Giovanni | Full Stack & Backend Engineer',
+    description: 'Portfolio of Wilkel Giovanni, a Full Stack and Backend Engineer specializing in Python, FastAPI, PHP, React, Node.js, AWS, and scalable fintech systems.',
+    ogDescription: 'Full Stack and Backend Engineer specializing in fintech systems, microservices APIs, cloud data, and scalable architectures.',
+    ogLocale: 'en_US'
+  }
+} as const;
 
 export const getTerminalTabs = (lang: Language): TerminalTab[] => [
   {
@@ -206,7 +196,6 @@ $ wilkel skills --summary
 > ${lang === 'es' ? 'Fintech (Índices Financieros, Microservicios, ETL), Inmobiliario, Sistemas Empresariales y Bancarios' : 'Fintech (Financial Indices, Microservices, ETL), Real Estate, Enterprise & Banking Systems'}`
   }
 ];
-
 export const getProjects = (lang: Language): Project[] => [
   {
     id: 'bita-fintech-engine',
@@ -216,7 +205,7 @@ export const getProjects = (lang: Language): Project[] => [
       ? 'Planificación, gestión, desarrollo y mantenimiento de sistemas que procesan grandes cantidades de datos financieros para inversión pasiva y cuantitativa. Desarrollo de APIs orientadas a microservicios, interfaces de usuario y procesamiento de datos ETL.'
       : 'Planning, management, development, and maintenance of systems processing large quantities of financial data for passive and quantitative investing. Built microservices APIs, user interfaces, and big data ETL pipelines.',
     category: 'Fintech / Data',
-    badge: 'Fintech Cloud Platform',
+    badge: lang === 'es' ? 'Plataforma Cloud Fintech' : 'Fintech Cloud Platform',
     tags: ['FastAPI', 'Python', 'Docker', 'Node.js', 'React.js', 'SQL', 'AWS', 'Pandas', 'Jupyter', 'Dask', 'Coiled'],
     architectureHighlights: lang === 'es' ? [
       'Desarrollo y mantenimiento de APIs orientadas a microservicios con FastAPI y Python',
@@ -230,10 +219,9 @@ export const getProjects = (lang: Language): Project[] => [
       'Enterprise-level cloud infrastructure management on AWS and Docker'
     ],
     metrics: [
-      { label: lang === 'es' ? 'Sector' : 'Domain', value: 'Fintech & Financial Indices' },
-      { label: lang === 'es' ? 'Sede' : 'HQ', value: 'Frankfurt, Germany' }
+      { label: lang === 'es' ? 'Sector' : 'Domain', value: lang === 'es' ? 'Fintech e Índices Financieros' : 'Fintech & Financial Indices' },
+      { label: lang === 'es' ? 'Sede' : 'HQ', value: lang === 'es' ? 'Frankfurt, Alemania' : 'Frankfurt, Germany' }
     ],
-    featured: true
   },
   {
     id: 'porta-srl-erp',
@@ -243,7 +231,7 @@ export const getProjects = (lang: Language): Project[] => [
       ? 'Desarrollo y mantenimiento de procesos de negocio desde rentabilidad hasta cobro. Conexión en tiempo real con sistemas ERP y múltiples pasarelas de pago (BANCARD, TIGO MONEY, ZIMPLE) y agencias de logística (AEX).'
       : 'Developed and maintained core business operations from profitability to collections. Created ERP connections for real-time data collection and integrated multiple payment gateways (BANCARD, TIGO MONEY, ZIMPLE) and shipping agencies (AEX).',
     category: 'Full-Stack',
-    badge: 'Enterprise Platform',
+    badge: lang === 'es' ? 'Plataforma Empresarial' : 'Enterprise Platform',
     tags: ['Vue.js', 'ReactJS', 'Laravel', 'MySQL', 'Payment Gateways', 'AEX Logistics'],
     architectureHighlights: lang === 'es' ? [
       'Procesamiento multipasarela de pagos (BANCARD, Tigo Money, Zimple)',
@@ -255,10 +243,9 @@ export const getProjects = (lang: Language): Project[] => [
       'End-to-end profitability tracking and automated invoicing'
     ],
     metrics: [
-      { label: lang === 'es' ? 'Pasarelas' : 'Gateways', value: '3 Active Payment Networks' },
-      { label: lang === 'es' ? 'Sincronización' : 'Sync', value: 'Real-Time ERP Data' }
+      { label: lang === 'es' ? 'Pasarelas' : 'Gateways', value: lang === 'es' ? '3 redes de pago activas' : '3 Active Payment Networks' },
+      { label: lang === 'es' ? 'Sincronización' : 'Sync', value: lang === 'es' ? 'Datos ERP en tiempo real' : 'Real-Time ERP Data' }
     ],
-    featured: true
   },
   {
     id: 'swiftflats-platform',
@@ -268,7 +255,7 @@ export const getProjects = (lang: Language): Project[] => [
       ? 'Plataforma web para búsqueda y reserva de habitaciones en pisos compartidos o residencias. Integración con Stripe para cobros y Elasticsearch para búsquedas de alta velocidad.'
       : 'Built a web platform allowing tenants to safely search and rent rooms in shared flats or university residences. Integrated Stripe for automated payments and Elasticsearch for fast room filter queries.',
     category: 'Full-Stack',
-    badge: 'Housing Marketplace',
+    badge: lang === 'es' ? 'Mercado de Viviendas' : 'Housing Marketplace',
     tags: ['Symfony 3.4', 'ReactJS', 'Laravel', 'Stripe', 'Elasticsearch', 'Docker', 'PostgreSQL'],
     architectureHighlights: lang === 'es' ? [
       'Motor de Búsqueda ágil de catálogo con Elasticsearch 7.5.2',
@@ -280,10 +267,9 @@ export const getProjects = (lang: Language): Project[] => [
       'Containerized deployment using Docker'
     ],
     metrics: [
-      { label: lang === 'es' ? 'Plataforma' : 'Platform', value: 'Multi-city Housing' },
+      { label: lang === 'es' ? 'Plataforma' : 'Platform', value: lang === 'es' ? 'Viviendas en varias ciudades' : 'Multi-city Housing' },
       { label: lang === 'es' ? 'Buscador' : 'Search Engine', value: 'Elasticsearch 7.5.2' }
     ],
-    featured: true
   },
   {
     id: 'clx-samsung-enterprise',
@@ -293,7 +279,7 @@ export const getProjects = (lang: Language): Project[] => [
       ? 'Plataformas web para gestión de divisa extranjera, data warehouse de ventas e inventario, activo fijo, garantías, servicio técnico y crédito de sistema (Credimax).'
       : 'Designed and deployed web platforms for CLX Samsung handling Foreign Currency Management, Sales and Inventory Data Warehousing, Fixed Assets, Guarantee Systems, Technical Support, and System Credit Management (Credimax).',
     category: 'Enterprise',
-    badge: 'Corporate Intranet Suite',
+    badge: lang === 'es' ? 'Suite de Intranet Corporativa' : 'Corporate Intranet Suite',
     tags: ['PHP 7', 'Laravel', 'ReactJS', 'MySQL', 'Bootstrap v4.4', 'Docker'],
     architectureHighlights: lang === 'es' ? [
       'Motor del sistema de crédito de compras Credimax',
@@ -304,7 +290,6 @@ export const getProjects = (lang: Language): Project[] => [
       'Foreign Currency and Inventory Data Warehouse modules',
       'Internal department automation reducing manual processing time'
     ],
-    featured: true
   },
   {
     id: 'intelix-banking-platform',
@@ -314,12 +299,10 @@ export const getProjects = (lang: Language): Project[] => [
       ? 'Aplicaciones bancarias con generación automatizada de reportes, configurador dinámico de DataSources y envío masivo de mensajería construidos con Spring Boot y Vaadin.'
       : 'Built banking applications including automated report generation, dynamic DataSources configuration engine, and automated customer messaging systems using Spring Boot and Vaadin.',
     category: 'Enterprise',
-    badge: 'Banking Solutions',
+    badge: lang === 'es' ? 'Soluciones Bancarias' : 'Banking Solutions',
     tags: ['Spring Boot', 'Vaadin', 'MS SQL Server', 'MongoDB', 'REST & SOAP', 'Spring Data JPA'],
-    featured: true
   }
 ];
-
 export const getExperiences = (lang: Language): ExperienceItem[] => [
   {
     id: 'exp-bita',
@@ -327,8 +310,9 @@ export const getExperiences = (lang: Language): ExperienceItem[] => [
     company: 'BITA GmbH',
     period: lang === 'es' ? '12/2022 — Presente' : '12/2022 — Present',
     location: lang === 'es' ? 'Frankfurt, Alemania (Remoto)' : 'Frankfurt, Germany (Remote)',
-    type: lang === 'es' ? 'Tiempo Completo' : 'Full-time',
-    description: 'BITA (known as The Index Technology Company) is a fintech company headquartered in Frankfurt, Germany, that provides enterprise-level cloud infrastructure, data, and financial indices for passive and quantitative investing.',
+    description: lang === 'es'
+      ? 'BITA (conocida como The Index Technology Company) es una empresa fintech con sede en Frankfurt, Alemania, que ofrece infraestructura cloud empresarial, datos e índices financieros para inversión pasiva y cuantitativa.'
+      : 'BITA (known as The Index Technology Company) is a fintech company headquartered in Frankfurt, Germany, that provides enterprise-level cloud infrastructure, data, and financial indices for passive and quantitative investing.',
     highlights: lang === 'es' ? [
       'Planificación, gestión, desarrollo y mantenimiento de sistemas que procesan grandes cantidades de datos.',
       'Desarrollo y mantenimiento de APIs orientadas a microservicios con FastAPI y Python.',
@@ -348,7 +332,6 @@ export const getExperiences = (lang: Language): ExperienceItem[] => [
     company: 'Agencia Web Porta S.R.L.',
     period: '06/2022 — 12/2022',
     location: 'Freelance',
-    type: 'Freelance',
     description: lang === 'es'
       ? 'Creación, mantenimiento y control de procesos de negocio desde la rentabilidad hasta el cobro con procedimientos automatizados. Múltiples conexiones ERP para captura de datos en tiempo real.'
       : 'Created, maintained, and controlled all business processes, from profitability to collection, through automated procedures. Engineered multiple ERP system connections for real-time data collection and recording.',
@@ -369,7 +352,6 @@ export const getExperiences = (lang: Language): ExperienceItem[] => [
     company: 'SWIFTFLATS',
     period: '06/2020 — 08/2022',
     location: 'Freelance',
-    type: 'Freelance',
     description: lang === 'es'
       ? 'Desarrollo de plataforma web de alquileres para estudiantes e ingenieros en prácticas para búsqueda y reserva eficiente de alojamientos.'
       : 'Engineered an online housing rental platform for university students and interns to safely and efficiently browse and book accommodation across shared flats and residences.',
@@ -423,33 +405,5 @@ export const getExperiences = (lang: Language): ExperienceItem[] => [
       'Managed MS SQL Server, MongoDB databases, and documentation via Springfox Swagger.'
     ],
     techStack: ['Spring Boot', 'Vaadin', 'Java', 'REST & SOAP', 'MS SQL Server', 'MongoDB', 'Swagger']
-  }
-];
-
-export const SKILL_CATEGORIES: SkillCategory[] = [
-  {
-    category: 'Backend, Microservices & Data',
-    skills: [
-      { name: 'FastAPI & Python', level: 96, description: 'Microservices APIs, asynchronous processing, ETL data pipelines.', badge: 'Current Stack' },
-      { name: 'PHP, Laravel & Symfony', level: 98, description: 'RESTful APIs, Eloquent/Doctrine ORM, enterprise bundles & payment gateways.', badge: 'Primary' },
-      { name: 'Pandas, Dask & Coiled', level: 90, description: 'Big data analysis, parallel computation, financial index calculations.', badge: 'Current Stack' },
-      { name: 'Java & Spring Boot', level: 88, description: 'REST/SOAP Web Services, Spring Data JPA, Vaadin components.', badge: 'Proficient' }
-    ]
-  },
-  {
-    category: 'Frontend Development',
-    skills: [
-      { name: 'React.js & Next.js', level: 95, description: 'User interfaces, dashboards, server-side rendering, and full-stack web applications.', badge: 'Primary' },
-      { name: 'Vue.js', level: 92, description: 'Vuex, Vue Router, reactive single file components.', badge: 'Primary' },
-      { name: 'JavaScript & HTML/CSS', level: 96, description: 'ES6+ standards, async promise workflows, responsive UI design.', badge: 'Expert' }
-    ]
-  },
-  {
-    category: 'Cloud, Databases & DevOps',
-    skills: [
-      { name: 'AWS & Docker', level: 92, description: 'Cloud infrastructure, microservices containerization, deployment.', badge: 'Current Stack' },
-      { name: 'SQL, PostgreSQL & MySQL', level: 96, description: 'Relational database architecture, query optimization, indexing.', badge: 'Expert' },
-      { name: 'Git, GitHub & Jupyter', level: 94, description: 'Version control, collaborative workflows, data analysis notebooks.', badge: 'Expert' }
-    ]
   }
 ];

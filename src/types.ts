@@ -8,15 +8,6 @@ export interface Project {
   tags: string[];
   metrics?: { label: string; value: string }[];
   architectureHighlights?: string[];
-  technicalDepth?: string[];
-  specs?: { label: string; value: string }[];
-  githubUrl?: string;
-  liveUrl?: string;
-  architectureDetails?: string[];
-  featured?: boolean;
-  stars?: number;
-  terminalHeader?: string;
-  isTerminalStyle?: boolean;
 }
 
 export interface ExperienceItem {
@@ -29,13 +20,6 @@ export interface ExperienceItem {
   description: string;
   highlights: string[];
   techStack: string[];
-  metrics?: string;
-}
-
-export interface SkillCategory {
-  category: string;
-  iconName?: string;
-  skills: { name: string; level?: number; description?: string; badge?: string }[];
 }
 
 export interface TerminalTab {
@@ -43,14 +27,4 @@ export interface TerminalTab {
   filename: string;
   language: string;
   content: string;
-}
-
-export interface HireMeFormData {
-  name: string;
-  email: string;
-  company?: string;
-  serviceType?: string;
-  budget?: string;
-  timeline?: string;
-  details?: string;
 }

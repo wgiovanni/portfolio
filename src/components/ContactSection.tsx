@@ -119,6 +119,7 @@ export const ContactSection: React.FC = () => {
                       <button
                         onClick={() => copyToClipboard(item.value, item.id)}
                         className="p-2 text-[#869397] hover:text-[#4cd7f6] hover:bg-[#2a2a2a] rounded transition-colors cursor-pointer shrink-0"
+                        aria-label={t.copyTooltip}
                         title={t.copyTooltip}
                       >
                         {isCopied ? (

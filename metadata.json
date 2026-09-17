@@ -1,8 +1,5 @@
 {
   "name": "Wilkel Giovanni - Full Stack Developer",
   "description": "Full Stack Web Developer portfolio with experience timeline, project showcase, skills breakdown, and direct contact details.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
+  "requestFramePermissions": []
 }

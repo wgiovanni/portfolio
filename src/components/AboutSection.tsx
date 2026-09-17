@@ -7,6 +7,7 @@ import profilePhoto from '../assets/images/wilkel_giovanni_photo.jpg';
 export const AboutSection: React.FC = () => {
   const { language } = useLanguage();
   const t = UI_TRANSLATIONS[language];
+  const [spanish, english] = PERSONAL_INFO.languages;
 
   return (
     <section id="about" className="py-20 border-t border-[#3d494c]/30 relative bg-[#131313]/70 backdrop-blur-sm">
@@ -40,10 +41,10 @@ export const AboutSection: React.FC = () => {
                     {t.educationTitle}
                   </span>
                   <h4 className="font-geist font-bold text-sm text-[#e5e2e1] mt-0.5">
-                    {t.degreeTitle}
+                    {PERSONAL_INFO.education[language].split(' — ')[0]}
                   </h4>
                   <p className="font-inter text-xs text-[#bcc9cd] mt-1">
-                    {t.univPeriod}
+                    {PERSONAL_INFO.education[language].split(' — ').slice(1).join(' — ')}
                   </p>
                 </div>
               </div>
@@ -59,12 +60,12 @@ export const AboutSection: React.FC = () => {
                   </span>
                   <div className="space-y-1 mt-1 font-inter text-xs text-[#bcc9cd]">
                     <div className="flex justify-between gap-2">
-                      <span className="font-medium text-[#e5e2e1]">{t.spanishLabel}</span>
-                      <span className="font-mono-code text-[#4cd7f6]">{t.spanishLevel}</span>
+                      <span className="font-medium text-[#e5e2e1]">{spanish.name[language]}:</span>
+                      <span className="font-mono-code text-[#4cd7f6]">{spanish.level[language]}</span>
                     </div>
                     <div className="flex justify-between gap-2">
-                      <span className="font-medium text-[#e5e2e1]">{t.englishLabel}</span>
-                      <span className="font-mono-code text-[#869397]">{t.englishLevel}</span>
+                      <span className="font-medium text-[#e5e2e1]">{english.name[language]}:</span>
+                      <span className="font-mono-code text-[#869397]">{english.level[language]}</span>
                     </div>
                   </div>
                 </div>

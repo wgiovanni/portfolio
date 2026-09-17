@@ -58,7 +58,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </button>
 
         {/* Category & Badge */}
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex flex-wrap items-center gap-3 mb-3">
           <span className="font-mono-code text-xs bg-[#201f1f] text-[#4cd7f6] px-3 py-1 rounded border border-[#4cd7f6]/40 uppercase tracking-wider font-semibold">
             {project.category}
           </span>
